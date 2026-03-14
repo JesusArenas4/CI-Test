@@ -1,6 +1,7 @@
 import sqlite3 
 from app import calcular_prioridad
 
+
 def test_db_connection_and_ticket_creation():
     # configurar conexion  (integraion con la base de datos)
     conn = sqlite3.connect(':memory:')
@@ -11,7 +12,7 @@ def test_db_connection_and_ticket_creation():
 
     # logica de negocio + persistencia
     ubcacion = "laboratorio de redes"
-    prioridad = calcular_prioridad(10)  #dos espacios antes del comentario
+    prioridad = calcular_prioridad(10)  # dos espacios antes del comentario
 
     cursor.execute(
         'INSERT INTO tickets (id, ubicacion, prioridad) VALUES (?, ? ,?)',
@@ -25,4 +26,3 @@ def test_db_connection_and_ticket_creation():
 
     assert resultado[0] == "prioridad alta"
     conn.close()
-

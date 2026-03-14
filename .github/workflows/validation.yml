@@ -27,3 +27,4 @@ jobs:
           PYTHONPATH: .
         run: |
           pytest tests/
+            
